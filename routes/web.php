@@ -13,25 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    return 'Bem-vindo à primeira app Laravel!';
-});
+Route::get('/','App\Http\Controllers\homeController@home');
 
-Route::get('/aboutus', function () {
-    return 'Sobre nós';
-});
+Route::get('/aboutus','App\Http\Controllers\aboutusController@aboutus');
 
-Route::get('/contacts', function () {
-    return 'Contactos';
-});
+Route::get('/contacts','App\Http\Controllers\contactsController@contacts');
 
-/*
-Route::METHOD($uri,$callback)
-get
-post
-put
-patch
-delete
-options
-*/
