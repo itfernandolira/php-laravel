@@ -8,6 +8,6 @@ class homeController extends Controller
 {
     //função home
     public function home() {
-        echo "Bem-vindo à primeira app Laravel com Controller!";
+        return view('site.home');
     }
 }

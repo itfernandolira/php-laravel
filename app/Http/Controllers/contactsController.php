@@ -8,6 +8,6 @@ class contactsController extends Controller
 {
     //função contacts
     public function contacts() {
-        echo "Contactos com Controller!";
+        return view('site.contacts');
     }
 }
