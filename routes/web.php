@@ -13,19 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','App\Http\Controllers\homeController@home');
+Route::get('/','App\Http\Controllers\homeController@home')->name('site.index');
 
-Route::get('/aboutus','App\Http\Controllers\aboutusController@aboutus');
+Route::get('/aboutus','App\Http\Controllers\aboutusController@aboutus')->name('site.aboutus');
 
-Route::get('/contacts','App\Http\Controllers\contactsController@contacts');
+Route::get('/contacts','App\Http\Controllers\contactsController@contacts')->name('site.contacts');
 
-Route::get('/login',function() {return 'Login'; });
+Route::get('/login',function() {return 'Login'; })->name('site.login');
 
 
 Route::prefix('/app')->group(function() {
-    Route::get('/clientes',function() {return 'Clientes'; });
-    Route::get('/fornecedores',function() {return 'Fornecedores'; });
-    Route::get('/produtos',function() {return 'Produtos'; });
+    Route::get('/clientes',function() {return 'Clientes'; })->name('app.clientes');
+    Route::get('/fornecedores',function() {return 'Fornecedores'; })->name('app.fornecedores');
+    Route::get('/produtos',function() {return 'Produtos'; })->name('app.produtos');
 });
 
 
