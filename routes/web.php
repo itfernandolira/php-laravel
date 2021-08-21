@@ -19,3 +19,7 @@ Route::get('/aboutus','App\Http\Controllers\aboutusController@aboutus');
 
 Route::get('/contacts','App\Http\Controllers\contactsController@contacts');
 
+Route::get('contacts/{nome}/{assunto}/{mensagem}',function (string $nome,string $assunto,string $mensagem) {
+    echo "Nome: $nome<br>Assunto: $assunto<br>Mensagem: $mensagem";
+});
+
