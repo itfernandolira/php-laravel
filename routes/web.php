@@ -34,3 +34,19 @@ Route::get('contacts/{nome}/{assunto}/{categoriaID}/{mensagem?}',function (strin
     echo "Nome: $nome<br>Assunto: $assunto<br>Categoria: $categoriaIdD<br>Mensagem: $mensagem";
 })->where('categoriaID','[0-9]+')->where('nome','[A-Za-z]+')->where('assunto','[A-Za-z]+');
 
+
+Route::get('/rota1',function() {
+    return 'Rota 1'; 
+})->name('site.rota1');
+
+//Redirecionamento - Método 1
+//Route::redirect('rota2','rota1');
+
+//Redirecionamento - Método 2
+Route::get('/rota2',function() {
+    return redirect()->route('site.rota1'); 
+})->name('site.rota2');
+
+//Redirecionamwnto - Método 3
+//Definir o redirecionamento no Controller da Rota2
+
