@@ -19,7 +19,7 @@ Route::get('/aboutus','App\Http\Controllers\aboutusController@aboutus');
 
 Route::get('/contacts','App\Http\Controllers\contactsController@contacts');
 
-Route::get('contacts/{nome}/{assunto}/{mensagem?}',function (string $nome,string $assunto,string $mensagem='Sem mensagem') {
-    echo "Nome: $nome<br>Assunto: $assunto<br>Mensagem: $mensagem";
-});
+Route::get('contacts/{nome}/{assunto}/{categoriaID}/{mensagem?}',function (string $nome,string $assunto,int $categoriaIdD=1,string $mensagem='Sem mensagem') {
+    echo "Nome: $nome<br>Assunto: $assunto<br>Categoria: $categoriaIdD<br>Mensagem: $mensagem";
+})->where('categoriaID','[0-9]+')->where('nome','[A-Za-z]+')->where('assunto','[A-Za-z]+');
 
