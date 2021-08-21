@@ -14,5 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return 'Bem-vindo à primeira app Laravel!';
 });
+
+Route::get('/aboutus', function () {
+    return 'Sobre nós';
+});
+
+Route::get('/contacts', function () {
+    return 'Contactos';
+});
+
+/*
+Route::METHOD($uri,$callback)
+get
+post
+put
+patch
+delete
+options
+*/
