@@ -50,3 +50,8 @@ Route::get('/rota2',function() {
 //Redirecionamwnto - Método 3
 //Definir o redirecionamento no Controller da Rota2
 
+//Rota de contingência
+Route::fallback(function() {
+    echo "A rota indicada não existe! Clique <a href='".route('site.index')."'>aqui</a> para voltar à página inicial.";
+});
+
