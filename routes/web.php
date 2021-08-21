@@ -21,11 +21,14 @@ Route::get('/contacts','App\Http\Controllers\contactsController@contacts');
 
 Route::get('/login',function() {return 'Login'; });
 
-Route::get('/clientes',function() {return 'Clientes'; });
 
-Route::get('/fornecedores',function() {return 'Fornecedores'; });
+Route::prefix('/app')->group(function() {
+    Route::get('/clientes',function() {return 'Clientes'; });
+    Route::get('/fornecedores',function() {return 'Fornecedores'; });
+    Route::get('/produtos',function() {return 'Produtos'; });
+});
 
-Route::get('/produtos',function() {return 'Produtos'; });
+
 
 Route::get('contacts/{nome}/{assunto}/{categoriaID}/{mensagem?}',function (string $nome,string $assunto,int $categoriaIdD=1,string $mensagem='Sem mensagem') {
     echo "Nome: $nome<br>Assunto: $assunto<br>Categoria: $categoriaIdD<br>Mensagem: $mensagem";
