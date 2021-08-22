@@ -46,6 +46,24 @@
         @php $i++ @endphp
     @endwhile
 
+    Com FOREACH<br>
+    @foreach($fornecedores as $indice => $fornecedor)
+        Nome: {{ $fornecedor['nome'] }}<br>
+        Distrito:
+        @switch($fornecedor['distrito'])
+            @case('13')
+                {{ $fornecedor['distrito'] }} - Porto
+                @break
+            @case('2')
+                {{ $fornecedor['distrito'] }} - Braga
+                @break
+            @default
+                Distrito desconhecido
+        @endswitch
+        <br>
+        <br>
+    @endforeach
+
     @if(!@empty($fornecedores))
     {{-- Mostrar todo o conteúdo de um array--}}
     @dd($fornecedores)
