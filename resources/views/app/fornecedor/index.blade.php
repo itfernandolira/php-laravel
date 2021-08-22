@@ -1,14 +1,10 @@
 <h3>Fornecedor</h3>
 
-{{-- Comentário em Blade --}}
+@if(count($fornecedores)>0)
+    <h4>Existem fornecedores registados!</h4>
+@else
+    <h4>Não existem fornecedores registados!</h4>
+@endif
 
-{{ 'Texto de teste' }}
-<br>
-<?= 'Texto de teste' ?>
-<br>
-
-{{-- Como incluir blocos de php puro --}}
-@php
-    //Aqui podemos incluir qualquer sintaxe de PHP
-    echo "Texto de teste";
-@endphp
+{{-- Mostrar todo o conteúdo de um array--}}
+@dd($fornecedores)
