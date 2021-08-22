@@ -1,5 +1,6 @@
 @extends('site.layouts.basico')
 
+@section('titulo','First app - Sobre nós')
 @section('conteudo')
         <div class="topo">
 

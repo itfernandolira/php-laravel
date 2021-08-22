@@ -8,6 +8,6 @@ class contactsController extends Controller
 {
     //função contacts
     public function contacts() {
-        return view('site.contacts');
+        return view('site.contacts',['titulo'=>'First app - Contacto (variavel)']);
     }
 }
