@@ -8,21 +8,22 @@
         <h4>Não existem fornecedores registados!</h4>
     @endif
 
-    Primeiro: <br>
-    Nome: {{ $fornecedores[0]['nome'] }}<br>
-    Distrito:
-    @switch($fornecedores[0]['distrito'])
-        @case('13')
-            {{ $fornecedores[0]['distrito'] }} - Porto<br>
-            @break
-        @case('2')
-            {{ $fornecedores[0]['distrito'] }} - Braga
-            @break
-    @endswitch
-
-    <br>
-    Segundo: <br>
-    {{ $fornecedores[1]['nome'] ?? 'Não existe' }}<br>
+    @for($i=0;$i<count($fornecedores);$i++)
+        Nome: {{ $fornecedores[$i]['nome'] }}<br>
+        Distrito:
+        @switch($fornecedores[$i]['distrito'])
+            @case('13')
+                {{ $fornecedores[$i]['distrito'] }} - Porto
+                @break
+            @case('2')
+                {{ $fornecedores[$i]['distrito'] }} - Braga
+                @break
+            @default
+                Distrito desconhecido
+        @endswitch
+        <br>
+        <br>
+    @endfor
 
     @if(!@empty($fornecedores))
     {{-- Mostrar todo o conteúdo de um array--}}
