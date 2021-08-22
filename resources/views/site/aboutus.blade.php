@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt">
-    <head>
-        <title>First app - Sobre Nós</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
-    </head>
+@extends('site.layouts.basico')
 
-    <body>
+@section('conteudo')
         <div class="topo">
 
             <div class="logo">
@@ -51,5 +45,4 @@
                 <img src="{{ asset('img/mapa.png') }}">
             </div>
         </div>
-    </body>
-</html>
+@endsection
