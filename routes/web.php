@@ -55,3 +55,5 @@ Route::fallback(function() {
     echo "A rota indicada não existe! Clique <a href='".route('site.index')."'>aqui</a> para voltar à página inicial.";
 });
 
+//Enviar parametros para o controller
+Route::get('/teste/{p1}/{p2}','App\Http\Controllers\testeController@teste')->name('teste');
