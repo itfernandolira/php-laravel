@@ -8,6 +8,9 @@
         <h4>Não existem fornecedores registados!</h4>
     @endif
 
+    Primeiro: {{ $fornecedores[0] }}<br>
+    Segundo: {{ $fornecedores[1] ?? 'Não existe' }}<br>
+
     @if(!@empty($fornecedores))
     {{-- Mostrar todo o conteúdo de um array--}}
     @dd($fornecedores)
