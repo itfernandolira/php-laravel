@@ -48,6 +48,11 @@
 
     Com FOREACH<br>
     @foreach($fornecedores as $indice => $fornecedor)
+        {{-- @dd($loop) --}}  
+        @if($loop->first)
+            Número de registos: {{ $loop->count }} <br><br>
+        @endif
+        Registo atual: {{ $loop->iteration}} <br>
         Nome: {{ $fornecedor['nome'] }}<br>
         Distrito:
         @switch($fornecedor['distrito'])
