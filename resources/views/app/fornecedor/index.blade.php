@@ -10,7 +10,7 @@
 
     Com FOR<br>
     @for($i=0;$i<count($fornecedores);$i++)
-        Nome: {{ $fornecedores[$i]['nome'] }}<br>
+        Nome: @{{ $fornecedores[$i]['nome'] }}<br>
         Distrito:
         @switch($fornecedores[$i]['distrito'])
             @case('13')
