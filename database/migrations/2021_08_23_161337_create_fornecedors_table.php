@@ -28,5 +28,6 @@ class CreateFornecedorsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('fornecedors');
+        //Schema::drop('fornecedors');
     }
 }
