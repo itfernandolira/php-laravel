@@ -13,7 +13,7 @@ class AlterFornecedores extends Migration
      */
     public function up()
     {
-        Schema::table('fornecedors',function($table) {
+        Schema::table('fornecedores',function($table) {
             $table->string('site',150)->after('nome')->nullable;
         });
     }
@@ -25,7 +25,7 @@ class AlterFornecedores extends Migration
      */
     public function down()
     {
-        Schema::table('fornecedors',function($table) {
+        Schema::table('fornecedores',function($table) {
             $table->dropColumn('site');
         });
     }

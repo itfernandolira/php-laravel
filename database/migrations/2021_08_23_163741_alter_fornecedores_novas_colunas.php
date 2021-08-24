@@ -13,7 +13,7 @@ class AlterFornecedoresNovasColunas extends Migration
      */
     public function up()
     {
-        Schema::table('fornecedors', function (Blueprint $table) {
+        Schema::table('fornecedores', function (Blueprint $table) {
             $table->string('pais',2);
             $table->string('email',80);
         });
@@ -26,7 +26,7 @@ class AlterFornecedoresNovasColunas extends Migration
      */
     public function down()
     {
-        Schema::table('fornecedors', function (Blueprint $table) {
+        Schema::table('fornecedores', function (Blueprint $table) {
             //para remover colunas
             //$table->dropColumn('pais');
             //$table->dropColumn('email');
