@@ -16,4 +16,6 @@ class fornecedor extends Model
 
     //Como ultrapassar a definição automática do nome da tabela
     protected $table='fornecedores';
+    //autorizar o método create indicando os campos que podem ser preenchidos
+    protected $fillable=['nome','site','email','pais'];
 }
