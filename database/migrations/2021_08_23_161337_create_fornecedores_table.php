@@ -17,6 +17,7 @@ class CreateFornecedoresTable extends Migration
             $table->id();
             $table->string('nome',80);
             $table->timestamps();
+            //$table->softDeletes(); Se implementar aqui, é preciso refazer as migrations.
         });
     }
 
