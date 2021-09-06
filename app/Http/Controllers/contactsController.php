@@ -22,11 +22,11 @@ class contactsController extends Controller
 
         //executar a validação
         $request->validate([
-            'nome'=>'required',
+            'nome'=>'required|min:3|max:40', //minimo de 3 caracteres e maximo de 40
             'telefone'=>'required',
             'email'=>'required',
             'motivo'=>'required',
-            'mensagem'=>'required'
+            'mensagem'=>'required|max:2000'
         ]);
         
         //código mais limpo
