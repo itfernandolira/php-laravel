@@ -22,15 +22,21 @@ class contactsController extends Controller
         echo $request->input('email'); */
 
         
-        $contacto=new siteContacto();
+/*         $contacto=new siteContacto();
         $contacto->nome=$request->input('nome');
         $contacto->telefone=$request->input('telefone');
         $contacto->email=$request->input('email');
         $contacto->motivo=$request->input('motivo');
         $contacto->mensagem=$request->input('mensagem');
 
+        $contacto->save(); */
+
+        $contacto=new siteContacto();
+        $contacto->fill($request->all());
         $contacto->save();
-        
+
+        //ou em alternativa
+        //$contacto->fill($request->all());
 
         return view('site.contacts',['titulo'=>'First app - Contacto (variavel)']);
     }
