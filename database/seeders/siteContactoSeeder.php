@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\siteContacto;
+use Database\Factories\siteContactoFactory;
 use Illuminate\Database\Seeder;
 
 class siteContactoSeeder extends Seeder
@@ -14,12 +15,14 @@ class siteContactoSeeder extends Seeder
      */
     public function run()
     {
-        $siteContacto=new siteContacto();
+        /* $siteContacto=new siteContacto();
         $siteContacto->nome='Pessoa 1';
         $siteContacto->telefone='911234567';
         $siteContacto->email='pessoa@flag.pt';
         $siteContacto->motivo=1;
         $siteContacto->mensagem='Primeira mensagem';
-        $siteContacto->save();
+        $siteContacto->save(); */   
+
+        siteContacto::factory()->count(100)->create();
     }
 }
