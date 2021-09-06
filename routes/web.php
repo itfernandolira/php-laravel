@@ -18,7 +18,7 @@ Route::get('/','App\Http\Controllers\homeController@home')->name('site.index');
 Route::get('/aboutus','App\Http\Controllers\aboutusController@aboutus')->name('site.aboutus');
 
 Route::get('/contacts','App\Http\Controllers\contactsController@contacts')->name('site.contacts');
-Route::post('/contacts','App\Http\Controllers\contactsController@contacts')->name('site.contacts');
+Route::post('/contacts','App\Http\Controllers\contactsController@guardar')->name('site.contacts');
 
 Route::get('/login',function() {return 'Login'; })->name('site.login');
 
