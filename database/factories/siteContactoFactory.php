@@ -25,7 +25,7 @@ class siteContactoFactory extends Factory
             'nome'=> $this->faker->name,
             'telefone'=> $this->faker->phoneNumber,
             'email'=>$this->faker->unique()->email,
-            'motivo'=>$this->faker->numberBetween(1,5),
+            'motivo'=>$this->faker->numberBetween(1,3),
             'mensagem'=>$this->faker->text(200)
         ];
     }
