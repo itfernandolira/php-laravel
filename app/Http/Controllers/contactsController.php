@@ -15,7 +15,13 @@ class contactsController extends Controller
          //ou em alternativa
         //$contacto->create($request->all());
 
-        return view('site.contacts',['titulo'=>'First app - Contacto (variavel)']);
+        $motivos=[
+            '1'=>'Dúvida',
+            '2'=>'Elogio',
+            '3'=>'Reclamação'
+        ];
+
+        return view('site.contacts',['titulo'=>'First app - Contacto (variavel)','motivos'=>$motivos]);
     }
 
     public function guardar(Request $request) {
