@@ -20,10 +20,19 @@ class contactsController extends Controller
 
     public function guardar(Request $request) {
 
+        //executar a validação
+        $request->validate([
+            'nome'=>'required',
+            'telefone'=>'required',
+            'email'=>'required',
+            'motivo'=>'required',
+            'mensagem'=>'required'
+        ]);
+        
         //código mais limpo
         siteContacto::create($request->all());
 
-        return view('site.contacts',['titulo'=>'First app - Contacto (variavel)']);
+        //return view('site.contacts',['titulo'=>'First app - Contacto (variavel)']);
 
     }
 }
