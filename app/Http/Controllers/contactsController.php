@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\motivo;
 use App\Models\siteContacto;
 use Illuminate\Http\Request;
 
@@ -15,11 +16,13 @@ class contactsController extends Controller
          //ou em alternativa
         //$contacto->create($request->all());
 
-        $motivos=[
+        /* $motivos=[
             '1'=>'Dúvida',
             '2'=>'Elogio',
             '3'=>'Reclamação'
-        ];
+        ]; */
+
+        $motivos=motivo::all();
 
         return view('site.contacts',['titulo'=>'First app - Contacto (variavel)','motivos'=>$motivos]);
     }
