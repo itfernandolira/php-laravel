@@ -34,14 +34,15 @@ class contactsController extends Controller
             'nome'=>'required|min:3|max:40', //minimo de 3 caracteres e maximo de 40
             'telefone'=>'required',
             'email'=>'email',
-            'motivo'=>'required',
+            'motivos_id'=>'required',
             'mensagem'=>'required|max:2000'
         ]);
         
         //código mais limpo
         siteContacto::create($request->all());
-
+        return redirect()->route('site.index');
         //return view('site.contacts',['titulo'=>'First app - Contacto (variavel)']);
+
 
     }
 }
