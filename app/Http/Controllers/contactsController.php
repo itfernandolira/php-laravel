@@ -38,6 +38,18 @@ class contactsController extends Controller
             'motivos_id'=>'required',
             'mensagem'=>'required|max:2000'
             ],
+            [
+                'nome.required'=>"Tem de indicar o nome",
+                'nome.min'=>"O nome tem de conter mais de 3 caracteres",
+                'nome.max'=>"O nome tem de conter menos de 40 caracteres",
+
+                //metodo generalista
+                'required'=>"Tem de indicar o :attribute",
+
+                'mensagem.max'=>"A mensagem tem de ter no máximo 2000 caracteres",
+                'email.email'=>"O email indicado não é válido"
+
+            ]
             
     );
         
