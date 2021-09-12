@@ -27,6 +27,8 @@ class logAccessMiddleware
         logAccess::create(['log'=>"IP $ip requisitou a rota $rota"]);
         //$response - manipular a response (response)
         //exemplo: não executar o return anterior e executar o return de response
-        return Response('O middlware foi executado!');
+        //return Response('O middlware foi executado!');
+
+        return $next($request);
     }
 }
