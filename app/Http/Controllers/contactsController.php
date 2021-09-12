@@ -33,7 +33,7 @@ class contactsController extends Controller
         $request->validate([
             'nome'=>'required|min:3|max:40', //minimo de 3 caracteres e maximo de 40
             'telefone'=>'required',
-            'email'=>'required',
+            'email'=>'email',
             'motivo'=>'required',
             'mensagem'=>'required|max:2000'
         ]);
