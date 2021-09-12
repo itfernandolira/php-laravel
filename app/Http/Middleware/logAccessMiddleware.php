@@ -29,6 +29,13 @@ class logAccessMiddleware
         //exemplo: não executar o return anterior e executar o return de response
         //return Response('O middlware foi executado!');
 
-        return $next($request);
+        //return $next($request);
+
+        $resposta=$next($request);
+
+        //dd($resposta);
+
+        $resposta->setStatusCode(201,"o status e o texto foram alterados!");
+        return $resposta;
     }
 }

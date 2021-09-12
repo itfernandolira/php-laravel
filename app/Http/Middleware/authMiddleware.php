@@ -15,14 +15,15 @@ class authMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, $metodoAutenticacao, $perfil)
     {
         //return $next($request);
-        if (true){
+        echo $metodoAutenticacao." - ". $perfil;
+        if (false){
             return $next($request);
         }
         else {
-            return Response("Acesso negado! Rota exige autenticação!");
+            return Response("<br>Acesso negado! Rota exige autenticação!");
         }
         
     }
