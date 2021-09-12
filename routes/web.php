@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(logAccessMiddleware::class)->get('/','App\Http\Controllers\homeController@home')->name('site.index');
+Route::get('/','App\Http\Controllers\homeController@home')->name('site.index');
 
 Route::get('/aboutus','App\Http\Controllers\aboutusController@aboutus')->name('site.aboutus');
 
