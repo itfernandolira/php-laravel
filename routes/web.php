@@ -21,7 +21,8 @@ Route::get('/aboutus','App\Http\Controllers\aboutusController@aboutus')->name('s
 Route::get('/contacts','App\Http\Controllers\contactsController@contacts')->name('site.contacts');
 Route::post('/contacts','App\Http\Controllers\contactsController@guardar')->name('site.contacts');
 
-Route::get('/login',function() {return 'Login'; })->name('site.login');
+Route::get('/login','App\Http\Controllers\loginController@index')->name('site.login');
+Route::post('/login','App\Http\Controllers\loginController@autenticar')->name('site.login');
 
 
 Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(function() {
