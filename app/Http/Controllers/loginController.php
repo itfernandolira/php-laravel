@@ -61,9 +61,11 @@ class loginController extends Controller
         else
             //echo "O utilizador não existe!";
             return redirect()->route('site.login',['erro'=>1]);
-
-
-
         
+    }
+
+    public function sair() {
+        session_destroy();
+        return redirect()->route('site.index');
     }
 }
