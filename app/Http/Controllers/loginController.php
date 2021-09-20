@@ -7,8 +7,14 @@ use Illuminate\Http\Request;
 
 class loginController extends Controller
 {
-    public function index() {
-        return view('site.login',['titulo'=>'Login']);
+    public function index(Request $request) {
+
+        $erro='';
+        
+        if ($request->get('erro')==1)
+            $erro="Dados inválidos. Tente novamente";
+            
+        return view('site.login',['titulo'=>'Login','erro'=>$erro]);
     }
 
     public function autenticar(Request $request) {
@@ -43,7 +49,8 @@ class loginController extends Controller
         if (isset($utilizador->name))
             echo "O utilizador existe!";
         else
-            echo "O utilizador não existe!";
+            //echo "O utilizador não existe!";
+            return redirect()->route('site.login',['erro'=>1]);
 
 
 
