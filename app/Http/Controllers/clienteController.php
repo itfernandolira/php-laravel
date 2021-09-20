@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class clienteController extends Controller
 {
     public function index() {
-        return view('app.cliente');
+        return view('app.cliente.index');
     }
 }
