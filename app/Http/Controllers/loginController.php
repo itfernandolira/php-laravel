@@ -13,7 +13,10 @@ class loginController extends Controller
         
         if ($request->get('erro')==1)
             $erro="Dados inválidos. Tente novamente";
-            
+        
+        if ($request->get('erro')==2)
+            $erro="É necessário realizar o login!";
+
         return view('site.login',['titulo'=>'Login','erro'=>$erro]);
     }
 
@@ -46,8 +49,15 @@ class loginController extends Controller
 
         //print_r($utilizador);
 
-        if (isset($utilizador->name))
-            echo "O utilizador existe!";
+        if (isset($utilizador->name)) {
+            //echo "O utilizador existe!";
+            //dd($utilizador);
+            session_start();
+            $_SESSION['nome']=$utilizador->name;
+            $_SESSION['email']=$utilizador->email;
+
+            return redirect()->route('app.clientes');
+        }
         else
             //echo "O utilizador não existe!";
             return redirect()->route('site.login',['erro'=>1]);

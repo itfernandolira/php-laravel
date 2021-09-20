@@ -18,12 +18,20 @@ class authMiddleware
     public function handle(Request $request, Closure $next, $metodoAutenticacao, $perfil)
     {
         //return $next($request);
-        echo $metodoAutenticacao." - ". $perfil;
+        /* echo $metodoAutenticacao." - ". $perfil;
         if (false){
             return $next($request);
         }
         else {
             return Response("<br>Acesso negado! Rota exige autenticação!");
+        } */
+        session_start();
+
+        if (isset($_SESSION['email']) && $_SESSION['email']!='') {
+            return $next($request);
+        }
+        else {
+            return redirect()->route('site.login',["erro"=>2]);
         }
         
     }
