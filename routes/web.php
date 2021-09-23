@@ -27,6 +27,7 @@ Route::post('/login','App\Http\Controllers\loginController@autenticar')->name('s
 
 Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(function() {
     Route::get('/clientes','App\Http\Controllers\clienteController@index')->name('app.clientes');
+    Route::get('/clientes/remover/{id}','App\Http\Controllers\clienteController@remover')->name('app.clientes.remover');
     Route::get('/fornecedores','App\Http\Controllers\fornecedorController@index')->name('app.fornecedores');
     Route::get('/produtos',function() {return 'Produtos'; })->name('app.produtos');
     Route::get('/sair/','App\Http\Controllers\loginController@sair')->name('app.sair');

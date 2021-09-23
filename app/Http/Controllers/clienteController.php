@@ -14,4 +14,11 @@ class clienteController extends Controller
 
         return view('app.cliente.index',['clientes'=>$clientes]);
     }
+
+    public function remover($id) {
+        cliente::find($id)->delete();
+
+        return redirect()->route('app.clientes');
+
+    }
 }
